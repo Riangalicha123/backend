@@ -1,0 +1,23 @@
+CRITICAL - 2023-12-16 08:58:29 --> Invalid file: "Hello.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Hello.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Hello', [], true)
+ 3 APPPATH\Controllers\UserController.php(242): view('Hello')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UserController->helloWorld()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-16 09:30:23 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`apdev`.`paymentacceptance`, CONSTRAINT `paymentacceptance_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`)) in C:\laragon\www\backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\backend\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `us...', 0)
+#1 C:\laragon\www\backend\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `us...')
+#2 C:\laragon\www\backend\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `us...')
+#3 C:\laragon\www\backend\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `us...', Array, false)
+#4 C:\laragon\www\backend\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\backend\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\laragon\www\backend\app\Controllers\UserController.php(128): CodeIgniter\BaseModel->delete(Array)
+#7 C:\laragon\www\backend\system\CodeIgniter.php(942): App\Controllers\UserController->deleteUser()
+#8 C:\laragon\www\backend\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\laragon\www\backend\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\backend\public\index.php(86): CodeIgniter\CodeIgniter->run()
+#11 {main}
